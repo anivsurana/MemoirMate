@@ -28,14 +28,14 @@
         android:layout_width="392dp"
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="156dp"
         android:backgroundTint="#849487"
         android:text="Member"
         android:textColor="#F0BEA7"
         android:textSize="49sp"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

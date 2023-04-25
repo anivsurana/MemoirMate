@@ -12,7 +12,6 @@ public class Post {
     private String userID;
     private String homePhotoUrl;
     private Long seen;
-    private String currency;
 
     public Post() {
     }
@@ -102,8 +101,6 @@ public class Post {
                 datetime.equals(post.datetime) &&
                 userID.equals(post.userID) &&
                 homePhotoUrl.equals(post.homePhotoUrl) &&
-                seen.equals(post.seen) &&
-                currency.equals(post.currency);
+                seen.equals(post.seen);
     }
-
 }

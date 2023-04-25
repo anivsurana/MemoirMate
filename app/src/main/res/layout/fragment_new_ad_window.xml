@@ -158,7 +158,26 @@
             android:textColorHint="@color/primary_text"
             android:textSize="14sp" />
 
-
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/cena"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginRight="45dp"
+            android:autofillHints="@string/cena"
+            android:background="@drawable/new_ad_edit_text_style"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/cena"
+            android:inputType="number"
+            android:padding="20dp"
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/primary_text"
+            android:textSize="14sp"
+            android:textStyle="italic" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_new_post"

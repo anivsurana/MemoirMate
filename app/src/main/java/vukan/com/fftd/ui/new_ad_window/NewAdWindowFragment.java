@@ -222,7 +222,7 @@ public class NewAdWindowFragment extends Fragment {
         }
 
         btn_add_new_Post.setOnClickListener(view3 -> {
-            if (opis.getText().toString().trim().length() > 0 && cena.getText().toString().trim().length() > 0 && naslov.getText().toString().trim().length() > 0 && counter > 0) {
+            if (opis != null && opis.getText().toString().trim().length() > 0 && cena.getText().toString().trim().length() > 0 && naslov.getText().toString().trim().length() > 0 && counter > 0) {
                 view3.startAnimation(mAnimation);
 
                 if (!Post_ID.equals("0"))

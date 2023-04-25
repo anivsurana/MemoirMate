@@ -88,12 +88,17 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
         void bind(int index) {
             postName.setText(posts.get(index).getName());
 
-            GlideApp.with(postImage.getContext())
-                    .load(storage.getPostImage(posts.get(index).getHomePhotoUrl()))
-                    .useAnimationPool(false)
-                    .placeholder(R.drawable.ic_image)
-                    .dontAnimate()
-                    .into(postImage);
+            try {
+                GlideApp.with(postImage.getContext())
+                        .load(storage.getPostImage(posts.get(index).getHomePhotoUrl()))
+                        .useAnimationPool(false)
+                        .placeholder(R.drawable.ic_image)
+                        .dontAnimate()
+                        .into(postImage);
+            } catch (Exception e) {
+                e.printStackTrace();
+                postImage.setImageResource(R.drawable.ic_image);
+            }
 
             repository.isFavourite(posts.get(index).getPostID(), star);
         }
@@ -108,7 +113,6 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
                 mOnClickListener.onStarItemClick(posts.get(i).getPostID(), v);
         }
     }
-
     public interface ListItemClickListener {
         void onListItemClick(String postID);
 

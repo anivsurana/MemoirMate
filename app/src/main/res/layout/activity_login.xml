@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="MemoirMate"
                 android:id="@+id/loginText"
                 android:textSize="36sp"
                 android:textAlignment="center"
@@ -96,7 +96,7 @@
                 android:layout_marginTop="1dp"
                 android:padding="8dp"
                 android:layout_gravity="center"
-                android:text="Not yet registered? Sign Up"
+                android:text="Not Registered? Sign Up!"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="18sp" />

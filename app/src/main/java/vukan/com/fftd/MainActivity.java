@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.os.Handler;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -94,14 +95,10 @@ public class MainActivity extends AppCompatActivity {
             mFirebaseUser = firebaseAuth.getCurrentUser();
 
             if (mFirebaseUser == null) {
-                activityResultLauncher.launch(AuthUI.getInstance()
-                        .createSignInIntentBuilder()
-                        .setIsSmartLockEnabled(false, false)
-                        .setAvailableProviders(Arrays.asList(
-                                new AuthUI.IdpConfig.EmailBuilder().build(),
-                                new AuthUI.IdpConfig.GoogleBuilder().build()))
-                        .setLogo(R.mipmap.ic_family)
-                        .build());
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                return;
             }
         };
         navView.getMenu().findItem(R.id.navigation_pocetna).setTitle(getString(R.string.title_pocetna));
@@ -134,22 +131,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.delete_account)
-        {
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.delete_account)
-                    .setMessage(R.string.confirm)
-                    .setPositiveButton(android.R.string.yes, (dialog, which) -> {
-                        myAdsViewModel.deleteUserData(mFirebaseUser.getUid());
-                        AuthUI.getInstance().delete(this).addOnCompleteListener(task ->
-                                Toast.makeText(this, R.string.account_deleted, Toast.LENGTH_SHORT).show()
-                        );
-                    })
-                    .setNegativeButton(android.R.string.no, null)
-                    .setIcon(R.drawable.ic_delete)
-                    .show();
-        }
-        else if (itemId == R.id.sign_out) {
+        if (itemId == R.id.sign_out) {
             AuthUI.getInstance().signOut(this).addOnCompleteListener(task ->
                     Toast.makeText(this, R.string.signed_out, Toast.LENGTH_SHORT).show()
             );
@@ -180,9 +162,9 @@ public class MainActivity extends AppCompatActivity {
                     .setIcon(R.drawable.ic_color)
                     .show();
         } else if (itemId == R.id.privacy_policy) {
-            openWebPage("https://sites.google.com/view/saleroom-privacy-policy");
+            openWebPage("https://www.youtube.com/midtrac");
         } else if (itemId == R.id.terms_and_conditions) {
-            openWebPage("https://sites.google.com/view/saleroom-terms-conditions");
+            openWebPage("https://www.youtube.com/midtrac");
         } else {
             return super.onOptionsItemSelected(item);
         }
@@ -201,10 +183,13 @@ public class MainActivity extends AppCompatActivity {
             if (editor != null) {
                 editor.putString("theme", data);
                 editor.apply();
-                recreate();
+                new Handler().postDelayed(() -> {
+                    recreate();
+                }, 500); // Delay for 500 milliseconds (0.5 seconds)
             }
         }
     }
+
 
 
 
