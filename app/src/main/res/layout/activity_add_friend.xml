@@ -67,7 +67,7 @@
             android:background="@drawable/new_ad_edit_text_style"
             android:fontFamily="@font/montserrat"
             android:hint="@string/friend_em"
-            android:inputType="number"
+            android:inputType="textMultiLine"
             android:padding="20dp"
             android:textColor="@color/primary_text"
             android:textColorHint="@color/primary_text"

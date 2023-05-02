@@ -30,7 +30,7 @@
     <string name="primeni">Apply</string>
     <string name="rastuce">Ascending</string>
     <string name="opadajuce">Descending</string>
-    <string name="sortiraj_po_ceni">Sort by price</string>
+    <string name="sortiraj_po_ceni">Sort by date</string>
     <string name="cena_do">To</string>
     <string name="cena_od">From</string>
     <string name="comment">Comment</string>
