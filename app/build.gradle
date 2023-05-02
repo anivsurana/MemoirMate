@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "vukan.com.fftd"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -42,6 +42,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.5.0'
+    implementation 'com.google.firebase:firebase-firestore:24.1.1'
     annotationProcessor 'androidx.annotation:annotation:1.2.0'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.multidex:multidex:2.0.1'

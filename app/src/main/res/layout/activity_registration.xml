@@ -38,11 +38,11 @@ tools:context=".Member">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:id="@+id/first_name"
+            android:id="@+id/full_name"
             android:background="@drawable/ic_customsquare"
             android:layout_marginTop="10dp"
             android:padding="8dp"
-            android:hint="First Name"
+            android:hint="Full Name"
             android:textColorHint="@color/black"
             android:drawableLeft="@drawable/baseline_arrow_circle_right_24"
             android:drawablePadding="8dp"
@@ -50,13 +50,13 @@ tools:context=".Member">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:id="@+id/last_name"
+            android:id="@+id/phone_num"
             android:background="@drawable/ic_customsquare"
             android:layout_marginTop="10dp"
             android:padding="8dp"
-            android:hint="Last Name"
+            android:hint="User Name"
             android:textColorHint="@color/black"
-            android:drawableLeft="@drawable/baseline_arrow_circle_right_24"
+            android:drawableLeft="@drawable/baseline_person_pin_24"
             android:drawablePadding="8dp"
             android:textColor="@color/black"/>
 
