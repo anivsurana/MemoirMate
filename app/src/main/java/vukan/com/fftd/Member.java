@@ -9,7 +9,7 @@ import android.os.Bundle;
         import androidx.annotation.NonNull;
 
 import android.content.Intent;
-import android.util.Log;
+
 import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
@@ -22,13 +22,10 @@ import com.google.android.gms.tasks.Task;
         import com.google.firebase.auth.AuthResult;
         import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
+
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
-import java.util.concurrent.ExecutionException;
-
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,7 +38,7 @@ public class Member extends AppCompatActivity {
     private static final String TAG = "MyApp/";
     private Button signupButton;
     private TextView loginRedirectText;
-    String userID;
+    String organizerID;
     FirebaseFirestore fstore;
 
     @Override
@@ -65,7 +62,7 @@ public class Member extends AppCompatActivity {
             public void onClick(View view) {
                 String email = signupEmail.getText().toString().trim();
                 String pass = signupPassword.getText().toString().trim();
-                String full_name = fullName.getText().toString().trim();
+                String full_name_mem = fullName.getText().toString().trim();
                 String user_name_member = user_Name.getText().toString().trim();
                 String access_code = accessCode.getText().toString().trim();
 
@@ -75,53 +72,25 @@ public class Member extends AppCompatActivity {
                 if (pass.isEmpty()) {
                     signupPassword.setError("Password cannot be empty");
                 }
-                if (full_name.isEmpty()) {
+                if (full_name_mem.isEmpty()) {
                     fullName.setError("Name cannot be empty");
                 }
                 if (user_name_member.isEmpty()) {
                     user_Name.setError("Username cannot be empty");
                 }
-                //if (!access_code.isEmpty()) {
-//                    FirestoreOptions firestoreOptions = FirestoreOptions.getDefaultInstance().toBuilder()
-//                            .setProjectId("fftdfinal")
-//                            .build();
-//                    Firestore db = firestoreOptions.getService();
-//
-//                    // Specify the collection where you want to search for the input
-//                    String collectionName = "OrganizerInputs";
-//                    CollectionReference collectionRef = db.collection(collectionName);
-//
-//                    // Retrieve all documents in the collection
-//                    ApiFuture<QuerySnapshot> future = collectionRef.get();
-//                    QuerySnapshot querySnapshot = future.get();
-//                    for (DocumentSnapshot document : querySnapshot.getDocuments()) {
-//                        // Check if the input exists in the document
-//                        String input = access_code;
-//                        String data = document.getString("access");
-//                        if (data.equals(input)) {
-//
-//                        } else {
-//                            accessCode.setError("Pleas retry");
-//                        }
-//                    }
-//
-//
-//                    // Don't forget to close the Firestore instance when you're done
-//                    db.close();
 
-                //}
                 else {
                     auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                userID = auth.getCurrentUser().getUid();
-                                DocumentReference documentReference = fstore.collection("userInputs").document(userID);
-                                Map<String, Object> user = new HashMap<>();
-                                user.put("fName", full_name);
-                                user.put("email", email);
-                                user.put("access", accessCode);
-                                user.put("userName", user_Name);
+                                organizerID = auth.getCurrentUser().getUid();
+                                DocumentReference documentReference = fstore.collection("MemberData").document(organizerID);
+                                Map<String,Object> user = new HashMap<>();
+                                user.put("fName",full_name_mem);
+                                user.put("email",email);
+                                user.put("access",access_code);
+                                user.put("uName",user_name_member);
                                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
@@ -137,7 +106,7 @@ public class Member extends AppCompatActivity {
                     });
                 }
             }
-        }); // <-- add closing curly brace here
+        });
 
 
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
