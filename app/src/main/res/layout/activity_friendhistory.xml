@@ -6,33 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/welcome_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/friendsButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
     <Button
-        android:id="@+id/friendsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/friend_history"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:id="@+id/friendButton"
+        android:layout_width="179dp"
+        android:layout_height="46dp"
         android:layout_margin="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_purple"
         android:fontFamily="@font/montserrat"
+        android:onClick="onFamilyButtonClick"
+        android:text="@string/add_friend"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
         android:textStyle="bold"
-        android:onClick="onFriendsButtonClick"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

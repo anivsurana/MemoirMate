@@ -105,6 +105,8 @@
     <string name="user_em_relation">User Email</string>
     <string name="rel_em_relation">Relative Email</string>
     <string name="rel_relation">Relationship</string>
+    <string name="add_friend">Add New Friend</string>
+    <string name="friend_em">Friend Email</string>
 
 
 </resources>

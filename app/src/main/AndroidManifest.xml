@@ -62,6 +62,9 @@
         <activity
             android:name=".AddRelation"
             android:exported="false" />
+        <activity
+            android:name=".AddFriend"
+            android:exported="false" />
 
     </application>
 

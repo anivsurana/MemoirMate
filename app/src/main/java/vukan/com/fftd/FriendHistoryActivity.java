@@ -1,27 +1,32 @@
 package vukan.com.fftd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FriendHistoryActivity extends AppCompatActivity {
 
-    private Button friendsButton;
-    private TextView welcomeMessage;
+    private Button friendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friendhistory);
 
-        friendsButton = findViewById(R.id.friendsButton);
-        welcomeMessage = findViewById(R.id.welcome_message);
+        friendButton = findViewById(R.id.friendButton);
+        friendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openaddpage();
+            }
+        });
     }
 
-    public void onFriendsButtonClick(View view) {
-        welcomeMessage.setText("Welcome to the Friends History page");
+    public void openaddpage(){
+        Intent intent = new Intent(this, AddFriend.class);
+        startActivity(intent);
     }
 }
