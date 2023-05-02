@@ -101,6 +101,10 @@
     <string name="travel">Travel</string>
     <string name="family_ancestry">Family Ancestry</string>
     <string name="friend_history">Friend History</string>
+    <string name="add_relation">Add New Relation</string>
+    <string name="user_em_relation">User Email</string>
+    <string name="rel_em_relation">Relative Email</string>
+    <string name="rel_relation">Relationship</string>
 
 
 </resources>

@@ -37,6 +37,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -83,6 +88,9 @@ public class MyAdsFragment extends Fragment implements PostRecyclerViewAdapter.L
     private Bitmap selectedImageCamera;
     private Uri selectedImageGallery;
 
+    private TextView user_name;
+    FirebaseFirestore fStore;
+    String user_ID;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_my_ads, container, false);
     }
@@ -150,7 +158,7 @@ public class MyAdsFragment extends Fragment implements PostRecyclerViewAdapter.L
         });
 
         avatar.setClickable(false);
-        username = view.findViewById(R.id.username);
+        user_name = view.findViewById(R.id.username);
         location = view.findViewById(R.id.location);
         phone = view.findViewById(R.id.phone);
         edit = view.findViewById(R.id.editButton);
@@ -167,6 +175,18 @@ public class MyAdsFragment extends Fragment implements PostRecyclerViewAdapter.L
         comment = view.findViewById(R.id.comment);
         butCanRate = view.findViewById(R.id.buttonCancelRate);
         commentBtn = view.findViewById(R.id.commentButton);
+
+
+//
+//        fStore = FirebaseFirestore.getInstance();
+//        DocumentReference documentReference = fStore.collection("OrganizerInouts").document(userID);
+//        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+//                username.setText(documentSnapshot.getString("uName"));
+//            }
+//        });
+
 
         myAdsViewModel.getUserRating(userID).observe(getViewLifecycleOwner(), rating -> {
             starGrade.setRating(rating);

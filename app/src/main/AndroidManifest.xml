@@ -59,6 +59,9 @@
         <activity
             android:name=".TravelActivity"
             android:exported="false" />
+        <activity
+            android:name=".AddRelation"
+            android:exported="false" />
 
     </application>
 

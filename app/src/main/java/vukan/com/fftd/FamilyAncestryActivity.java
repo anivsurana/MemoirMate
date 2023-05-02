@@ -1,5 +1,6 @@
 package vukan.com.fftd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class FamilyAncestryActivity extends AppCompatActivity {
 
     private Button familyButton;
-    private TextView welcomeMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,16 @@ public class FamilyAncestryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_familyancestry);
 
         familyButton = findViewById(R.id.familyButton);
-        welcomeMessage = findViewById(R.id.welcome_message);
+        familyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openaddpage();
+            }
+        });
     }
 
-    public void onFamilyButtonClick(View view) {
-        welcomeMessage.setText("Welcome to the Family Ancestry page");
+    public void openaddpage(){
+        Intent intent = new Intent(this, AddRelation.class);
+        startActivity(intent);
     }
 }
