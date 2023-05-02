@@ -21,7 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import vukan.com.fftd.GlideApp;
 import vukan.com.fftd.R;
 import vukan.com.fftd.models.Message;
-import vukan.com.fftd.ui.pages.MessagesFragmentDirections;
+import vukan.com.fftd.ui.pages.PagesFragmentDirections;
 
 public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Message> messages;
@@ -73,7 +73,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             }
 
             holder.itemView.findViewById(R.id.message_sender_image).setOnClickListener(view -> {
-                MessagesFragmentDirections.PorukeToMojiOglasiFragmentAction action = MessagesFragmentDirections.porukeToMojiOglasiFragmentAction();
+                PagesFragmentDirections.PorukeToMojiOglasiFragmentAction action = PagesFragmentDirections.porukeToMojiOglasiFragmentAction();
                 action.setUserId(messages.get(position).getSenderID());
                 Navigation.findNavController(view).navigate(action);
             });
@@ -85,7 +85,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             GlideApp.with(messageViewHolder2.receiverImage.getContext()).load(Objects.requireNonNull(fire_user).getPhotoUrl()).into(messageViewHolder2.receiverImage);
 
             holder.itemView.findViewById(R.id.message_receiver_image).setOnClickListener(view -> {
-                MessagesFragmentDirections.PorukeToMojiOglasiFragmentAction action = MessagesFragmentDirections.porukeToMojiOglasiFragmentAction();
+                PagesFragmentDirections.PorukeToMojiOglasiFragmentAction action = PagesFragmentDirections.porukeToMojiOglasiFragmentAction();
                 action.setUserId(messages.get(position).getSenderID());
                 Navigation.findNavController(view).navigate(action);
             });

@@ -61,9 +61,9 @@
 
     <fragment
         android:id="@+id/navigation_poruke"
-        android:name="vukan.com.fftd.ui.pages.MessagesFragment"
+        android:name="vukan.com.fftd.ui.pages.PagesFragment"
         android:label="@string/title_pages"
-        tools:layout="@layout/fragment_messages">
+        tools:layout="@layout/fragment_pages">
 
         <action
             android:id="@+id/porukeToMojiOglasiFragmentAction"
@@ -99,20 +99,6 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
-    <fragment
-        android:id="@+id/navigation_obavestenja"
-        android:name="vukan.com.fftd.ui.user_messages.UserMessagesFragment"
-        android:label="@string/title_pages"
-        tools:layout="@layout/fragment_user_messages">
-
-        <action
-            android:id="@+id/obavestenjaToPorukeFragmentAction"
-            app:destination="@id/navigation_poruke"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
 
     <fragment
         android:id="@+id/navigation_mojioglasi"

@@ -17,7 +17,6 @@ import java.util.Locale;
 import vukan.com.fftd.R;
 import vukan.com.fftd.models.Conv;
 import vukan.com.fftd.models.Message;
-import vukan.com.fftd.ui.user_messages.UserMessagesFragmentDirections;
 
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapter.ConversationViewHolder> {
     private List<Conv> conversations;
@@ -49,9 +48,6 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
     public void onBindViewHolder(@NonNull ConversationViewHolder holder, int position) {
         holder.bind(position);
 
-        holder.itemView.setOnClickListener(view ->
-                Navigation.findNavController(view).navigate(UserMessagesFragmentDirections.obavestenjaToPorukeFragmentAction(conversations.get(position).getMessages().toArray(new Message[0])))
-        );
 
         holder.itemView.setOnLongClickListener(view -> {
             mOnClickListener.onListItemClick(conversations.get(position), view);

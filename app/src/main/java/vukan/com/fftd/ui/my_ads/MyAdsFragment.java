@@ -391,7 +391,5 @@ public class MyAdsFragment extends Fragment implements PostRecyclerViewAdapter.L
         Navigation.findNavController(requireView()).navigate(action);
     }
 
-    @Override
-    public void onStarItemClick(String postID, View view) {
-    }
+
 }

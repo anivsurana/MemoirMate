@@ -7,7 +7,7 @@
         android:title="@string/title_pocetna" />
 
     <item
-        android:id="@+id/navigation_obavestenja"
+        android:id="@+id/navigation_poruke"
         android:icon="@drawable/ic_message"
         android:title="@string/title_pages" />
 

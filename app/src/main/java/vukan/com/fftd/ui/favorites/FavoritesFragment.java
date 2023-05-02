@@ -46,11 +46,6 @@ public class FavoritesFragment extends Fragment implements PostRecyclerViewAdapt
         Navigation.findNavController(requireView()).navigate(action);
     }
 
-    @Override
-    public void onStarItemClick(String postID, View view) {
-        favoritesViewModel.removePostFromFavourites(postID);
-        getPosts();
-    }
 
     void getPosts() {
         favoritesViewModel.getFavouritePosts().observe(getViewLifecycleOwner(), posts -> {

@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         navView.getMenu().findItem(R.id.navigation_pocetna).setTitle(getString(R.string.title_pocetna));
         navView.getMenu().findItem(R.id.navigation_omiljeni).setTitle(getString(R.string.omiljeni));
         navView.getMenu().findItem(R.id.navigation_novioglas).setTitle(getString(R.string.title_create));
-        navView.getMenu().findItem(R.id.navigation_obavestenja).setTitle(getString(R.string.title_pages));
+        navView.getMenu().findItem(R.id.navigation_poruke).setTitle(getString(R.string.title_pages));
         navView.getMenu().findItem(R.id.navigation_mojioglasi).setTitle(getString(R.string.title_mojioglasi));
 
         // Add the following code block to set the locale to English always

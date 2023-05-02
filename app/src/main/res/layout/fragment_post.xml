@@ -151,7 +151,7 @@
             android:drawablePadding="@dimen/space_4"
             android:fontFamily="@font/montserrat"
             android:padding="@dimen/space_4"
-            android:text="@string/posalji_poruku"
+            android:text="Comment"
             android:textColor="@color/primary_text"
             app:layout_constraintBottom_toTopOf="@+id/adView"
             app:layout_constraintEnd_toStartOf="@+id/pozovi"

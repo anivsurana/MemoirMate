@@ -47,6 +47,18 @@
         <activity
             android:name=".Organizer"
             android:label="Organizer" />
+        <activity
+            android:name=".FamilyAncestryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FriendHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TravelActivity"
+            android:exported="false" />
 
     </application>
 

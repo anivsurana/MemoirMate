@@ -96,18 +96,6 @@ public class HomeFragment extends Fragment implements PostRecyclerViewAdapter.Li
         Navigation.findNavController(requireView()).navigate(action);
     }
 
-    @Override
-    public void onStarItemClick(String postID, View v) {
-        CheckBox star = ((CheckBox) v);
-
-        if (star.isChecked()) {
-            star.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.ic_star_border));
-            homeViewModel.removePostFromFavourites(postID);
-        } else {
-            star.setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.ic_star));
-            homeViewModel.addPostToFavourites(postID);
-        }
-    }
 
     @Override
     public void onRefresh() {

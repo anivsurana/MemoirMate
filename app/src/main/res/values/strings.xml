@@ -97,5 +97,10 @@
     <string name="no_results">No results!</string>
     <string name="invalid_prices">Price from must be lower from price to!</string>
     <string name="title_login">Login</string>
+    <string name="events">Events</string>
+    <string name="travel">Travel</string>
+    <string name="family_ancestry">Family Ancestry</string>
+    <string name="friend_history">Friend History</string>
+
 
 </resources>

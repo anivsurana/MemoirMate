@@ -74,15 +74,12 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
     class PostViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         final TextView postName;
         final ImageView postImage;
-        final CheckBox star;
 
         PostViewHolder(@NonNull View itemView) {
             super(itemView);
             postName = itemView.findViewById(R.id.post_name);
             postImage = itemView.findViewById(R.id.post_image);
-            star = itemView.findViewById(R.id.star);
             postImage.setOnClickListener(this);
-            star.setOnClickListener(this);
         }
 
         void bind(int index) {
@@ -100,7 +97,6 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
                 postImage.setImageResource(R.drawable.ic_image);
             }
 
-            repository.isFavourite(posts.get(index).getPostID(), star);
         }
 
         @Override
@@ -109,13 +105,11 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
 
             if (v instanceof ImageView)
                 mOnClickListener.onListItemClick(posts.get(i).getPostID());
-            else if (v instanceof CheckBox)
-                mOnClickListener.onStarItemClick(posts.get(i).getPostID(), v);
+
         }
     }
     public interface ListItemClickListener {
         void onListItemClick(String postID);
 
-        void onStarItemClick(String postID, View view);
     }
 }
